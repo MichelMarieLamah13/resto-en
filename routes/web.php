@@ -16,3 +16,8 @@ use App\Http\Controllers\RestoController;
 
 Route::get('/', [RestoController::class, 'index']);
 Route::get('/list', [RestoController::class, 'list']);
+Route::get('/add', [RestoController::class, 'showAddPage']);
+Route::post('/add', [RestoController::class, 'add']);
+Route::get('/edit/{id}', [RestoController::class, 'showEditPage']);
+Route::post('/edit', [RestoController::class, 'edit']);
+Route::get('/delete/{id}', [RestoController::class, 'delete']);
