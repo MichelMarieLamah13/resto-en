@@ -14,10 +14,10 @@ use App\Http\Controllers\RestoController;
 |
 */
 
-Route::get('/', [RestoController::class, 'index']);
-Route::get('/list', [RestoController::class, 'list']);
-Route::get('/add', [RestoController::class, 'showAddPage']);
-Route::post('/add', [RestoController::class, 'add']);
-Route::get('/edit/{id}', [RestoController::class, 'showEditPage']);
-Route::post('/edit', [RestoController::class, 'edit']);
-Route::get('/delete/{id}', [RestoController::class, 'delete']);
+Route::get('/', [RestoController::class, 'index'])->name('index');
+Route::get('/list', [RestoController::class, 'list'])->name('resto.list');
+Route::get('/add', [RestoController::class, 'showAddPage'])->name('resto.showAddPage');
+Route::post('/add', [RestoController::class, 'add'])->name('resto.add');
+Route::get('/edit/{id}', [RestoController::class, 'showEditPage'])->name('resto.showEditPage');
+Route::post('/edit', [RestoController::class, 'edit'])->name('resto.edit');
+Route::get('/delete/{id}', [RestoController::class, 'delete'])->name('resto.delete');

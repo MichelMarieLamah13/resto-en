@@ -27,6 +27,7 @@ class RestoController extends Controller
 
     function add(Request $req)
     {
+        $req->flash();
         $req->validate([
             'name' => 'required | min:6',
             'email' => 'required | email',
@@ -64,7 +65,6 @@ class RestoController extends Controller
         $resto->email = $req->email;
         $resto->address = $req->address;
         $rep = $resto->save();
-        $page = '';
         if($rep){
             $req->session()->flash('success','Restaurant edited successfully');
             return redirect('/list');

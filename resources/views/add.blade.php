@@ -17,12 +17,12 @@
         </div>
         <div class="col-md-6 col-lg-6">
             <h4 class="mb-3">Restaurant Information</h4>
-            <form class="needs-validation" novalidate method="POST" action="/add">
+            <form class="needs-validation" novalidate method="POST" action="{{ route('resto.add') }}">
                 @csrf
                 <div class="row g-3">
                     <div class="col-12">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="" value="" required>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="" value="{{ old('name') }}" required>
                         @error('name')
                             <div class="text text-danger">
                                 {{ $message }}
@@ -32,7 +32,7 @@
                     <div class="col-12">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com"
-                            required>
+                            value="{{ old('email') }}" required>
                         @error('email')
                             <div class="text text-danger">
                                 {{ $message }}
@@ -42,7 +42,7 @@
                     <div class="col-12">
                         <label for="address" class="form-label">Address</label>
                         <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St"
-                            required>
+                            value="{{ old('address') }}" required>
                         @error('address')
                             <div class="text text-danger">
                                 {{ $message }}

@@ -65,13 +65,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/list">List</a>
+                        <a class="nav-link" href="{{ route('resto.list') }}">List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/add">Add</a>
+                        <a class="nav-link" href="{{ route('resto.showAddPage') }}">Add</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Login</a>
