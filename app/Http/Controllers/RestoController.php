@@ -64,12 +64,13 @@ class RestoController extends Controller
         $resto->email = $req->email;
         $resto->address = $req->address;
         $rep = $resto->save();
+        $page = '';
         if($rep){
             $req->session()->flash('success','Restaurant edited successfully');
             return redirect('/list');
         }else{
             $req->session()->flash('error','Error while editing restaurant');
-            return redirect('/edit/'+$req->id);
+            return redirect('/edit/'.$req->id);
         }
 
     }
